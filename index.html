@@ -7,6 +7,55 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <main>
+      <form>
+        <div class="step step-one">
+          <h2>Register</h2>
+          <div class="form-element">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="enter your name"
+            />
+          </div>
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+        </div>
+        <div class="step step-two">
+          <h2>Which topics are you interested in?</h2>
+          <div class="form-element">
+            <label for="software">Software Development</label>
+            <input type="checkbox" name="software" id="software" />
+          </div>
+          <div class="form-element">
+            <label for="ux">User Experience</label>
+            <input type="checkbox" name="ux" id="ux" />
+          </div>
+          <div class="form-element">
+            <label for="graphic-design">Graphic Design</label>
+            <input type="checkbox" name="graphic-design" id="graphic-design" />
+          </div>
+        </div>
+        <button type="submit">Continue</button>
+      </form>
+      <div class="step-container">
+        <span>Step 1 of 3</span>
+        <div class="dot-container" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>
