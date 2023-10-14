@@ -9,8 +9,27 @@ body {
     display: grid;
     height: 100vh;
     place-items: center;
+    background-image: linear-gradient(45deg,
+        hsl(251deg 49% 23%) 0%,
+        hsl(249deg 47% 22%) 10%,
+        hsl(247deg 45% 21%) 20%,
+        hsl(245deg 43% 19%) 30%,
+        hsl(243deg 40% 18%) 40%,
+        hsl(242deg 37% 16%) 50%,
+        hsl(236deg 38% 15%) 60%,
+        hsl(231deg 40% 14%) 70%,
+        hsl(227deg 40% 13%) 80%,
+        hsl(224deg 39% 12%) 90%,
+        hsl(222deg 36% 11%) 100%);
+    color: #E5E7EB;
 }
 
 input, label {
     font-family: inherit;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
