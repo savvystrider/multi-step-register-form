@@ -26,10 +26,26 @@ body {
 
 input, label {
     font-family: inherit;
+    display: block;
+    margin-bottom: 1em;
 }
 
 fieldset {
     border: none;
     margin: 0;
     padding: 0;
+}
+
+form {
+    padding: 2em;
+    background-color: #212936;
+    border-radius: 1em;
+}
+
+.step-two, .step-three {
+    display: none;
+}
+
+.step.active {
+    display: block;
 }
