@@ -10,7 +10,7 @@
     <main>
       <form>
         <div class="step step-one">
-          <h2>Register</h2>
+          <h1>Register</h1>
           <div class="form-element">
             <label for="name">Name</label>
             <input
@@ -18,6 +18,7 @@
               id="name"
               name="name"
               placeholder="enter your name"
+              required
             />
           </div>
           <div class="form-element">
@@ -27,26 +28,34 @@
               name="email"
               id="email"
               placeholder="example@gmail.com"
+              required
             />
           </div>
         </div>
         <div class="step step-two">
-          <h2>Which topics are you interested in?</h2>
-          <div class="form-element">
-            <label for="software">Software Development</label>
-            <input type="checkbox" name="software" id="software" />
-          </div>
-          <div class="form-element">
-            <label for="ux">User Experience</label>
-            <input type="checkbox" name="ux" id="ux" />
-          </div>
-          <div class="form-element">
-            <label for="graphic-design">Graphic Design</label>
-            <input type="checkbox" name="graphic-design" id="graphic-design" />
-          </div>
+          <fieldset>
+            <legend>Which topics are you interested in?</legend>
+            <div class="form-element">
+              <label for="software">Software Development</label>
+              <input type="checkbox" name="software" id="software" />
+            </div>
+            <div class="form-element">
+              <label for="ux">User Experience</label>
+              <input type="checkbox" name="ux" id="ux" />
+            </div>
+            <div class="form-element">
+              <label for="graphic-design">Graphic Design</label>
+              <input
+                type="checkbox"
+                name="graphic-design"
+                id="graphic-design"
+              />
+            </div>
+          </fieldset>
         </div>
         <button type="submit">Continue</button>
       </form>
+      <div class="summary"></div>
       <div class="step-container">
         <span>Step 1 of 3</span>
         <div class="dot-container" aria-hidden="true">
