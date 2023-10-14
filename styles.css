@@ -109,6 +109,7 @@ form {
     border-radius: 1em;
     max-width: 50%;
     min-width: 30rem;
+    box-shadow: 1px 1px 6px 1px rgba(255, 255, 255, 0.15);
 }
 
 .step-two, .step-three {
@@ -121,4 +122,49 @@ form {
 
 .step.inactive {
     display: none;
+}
+
+.step-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.step-container span {
+    font-size: 0.75rem;
+    color: #616B85;
+}
+
+.dot-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dot {
+    display: inline-block;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    background-color: #394050;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background-color: #652CD1;
+    position: relative;
+}
+
+.dot.active::before {
+    content: "";
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #39405066;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
