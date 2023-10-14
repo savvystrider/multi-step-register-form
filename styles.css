@@ -22,12 +22,57 @@ body {
         hsl(224deg 39% 12%) 90%,
         hsl(222deg 36% 11%) 100%);
     color: #E5E7EB;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 1.25rem;
+    color: #E4E8EA;
 }
 
 input, label {
     font-family: inherit;
     display: block;
     margin-bottom: 1em;
+    width: 100%;
+    color: #9D9DA5;
+}
+
+label {
+    font-size: 0.75rem;
+    margin-top: 2em;
+}
+
+input {
+    padding: 1em;
+    background: transparent;
+    border-radius: 1em;
+    margin-bottom: 2em;
+    border: 2px solid #4D5562;
+}
+
+.btn {
+    display: block;
+    cursor: pointer;
+    color: #E4E7EA;
+    background-image: linear-gradient(180deg,
+        hsl(261deg 65% 50%) 0%,
+        hsl(260deg 67% 51%) 11%,
+        hsl(260deg 69% 53%) 22%,
+        hsl(259deg 71% 55%) 33%,
+        hsl(258deg 72% 56%) 44%,
+        hsl(258deg 74% 58%) 56%,
+        hsl(258deg 75% 60%) 67%,
+        hsl(257deg 77% 62%) 78%,
+        hsl(256deg 80% 64%) 89%,
+        hsl(256deg 81% 65%) 100%);
+    padding: 0.75em 2em;
+    border-radius: 1em;
+    border: none;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 0.875rem;
+    margin: 0 auto;
 }
 
 fieldset {
@@ -40,6 +85,8 @@ form {
     padding: 2em;
     background-color: #212936;
     border-radius: 1em;
+    max-width: 50%;
+    min-width: 30rem;
 }
 
 .step-two, .step-three {
