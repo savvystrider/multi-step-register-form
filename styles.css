@@ -25,12 +25,12 @@ body {
     line-height: 1.5;
 }
 
-h1 {
+h1, h2 {
     font-size: 1.25rem;
     color: #E4E8EA;
 }
 
-input, label {
+#name, #email, label {
     font-family: inherit;
     display: block;
     margin-bottom: 1em;
@@ -40,15 +40,38 @@ input, label {
 
 label {
     font-size: 0.75rem;
-    margin-top: 2em;
 }
 
-input {
+#name,
+#email {
     padding: 1em;
     background: transparent;
     border-radius: 1em;
     margin-bottom: 2em;
     border: 2px solid #4D5562;
+}
+
+input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+fieldset .form-element label {
+    background-color: #394050;
+    padding: 1em;
+    cursor: pointer;
+    color: #868992;
+    border-radius: 1em;
+}
+
+label[for=graphic-design] {
+    margin-bottom: 2em;
+}
+
+input[type=checkbox]:checked + label {
+    background-color: #652CD1;
+    color: #E4E8EA;
 }
 
 .btn {
@@ -69,7 +92,6 @@ input {
     padding: 0.75em 2em;
     border-radius: 1em;
     border: none;
-    font-weight: bold;
     font-family: inherit;
     font-size: 0.875rem;
     margin: 0 auto;
