@@ -49,3 +49,7 @@ form {
 .step.active {
     display: block;
 }
+
+.step.inactive {
+    display: none;
+}
