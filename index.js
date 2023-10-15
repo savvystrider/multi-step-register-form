@@ -5,12 +5,17 @@ const checkboxes = Array.from(
   document.querySelectorAll("input[type=checkbox]")
 );
 
+const topicsList = document.getElementById("topics-list");
+
 const stepOne = document.querySelector(".step-one");
 const stepTwo = document.querySelector(".step-two");
 const stepThree = document.querySelector(".step-three");
 
 const steps = [stepOne, stepTwo, stepThree];
 let stepIndex = 0;
+const stepNumber = document.getElementById("step-number");
+
+let formData = {};
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -18,14 +23,34 @@ submitBtn.addEventListener("click", function (e) {
   verifyInputs();
 
   if (nameInput.value !== "" && emailInput.value !== "") {
+    formData = {
+      name: nameInput.value,
+      email: emailInput.value,
+      topics: [],
+    };
+    stepNumber.textContent = stepIndex + 1;
     steps[stepIndex].classList.add("inactive");
     steps[stepIndex + 1].classList.add("active");
 
-    const checkboxChecked = checkboxes.some((checkbox) => checkbox.checked);
+    const filterChecked = checkboxes.filter((checkbox) => checkbox.checked);
 
-    if (checkboxChecked) {
+    if (filterChecked) {
+      filterChecked.forEach((checkbox) => {
+        formData.topics.push(checkbox.dataset.description);
+      });
       stepIndex++;
     }
+
+    document.getElementById("name-output").textContent = formData.name;
+    document.getElementById("email-output").textContent = formData.email;
+
+    const formMap = formData.topics
+      .forEach((topic) => {
+        const listEl = document.createElement("li");
+        listEl.textContent = topic;
+        topicsList.appendChild(listEl);
+      })
+      .join("");
   }
 });
 
