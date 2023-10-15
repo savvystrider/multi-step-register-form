@@ -17,6 +17,8 @@ const stepNumber = document.getElementById("step-number");
 
 let formData = {};
 
+stepNumber.textContent = stepIndex + 1;
+
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -31,10 +33,10 @@ submitBtn.addEventListener("click", function (e) {
     stepNumber.textContent = stepIndex + 1;
     steps[stepIndex].classList.add("inactive");
     steps[stepIndex + 1].classList.add("active");
-
+    stepNumber.textContent = stepIndex + 2;
     const filterChecked = checkboxes.filter((checkbox) => checkbox.checked);
 
-    if (filterChecked) {
+    if (filterChecked.length > 0) {
       filterChecked.forEach((checkbox) => {
         formData.topics.push(checkbox.dataset.description);
       });
@@ -44,13 +46,14 @@ submitBtn.addEventListener("click", function (e) {
     document.getElementById("name-output").textContent = formData.name;
     document.getElementById("email-output").textContent = formData.email;
 
-    const formMap = formData.topics
-      .forEach((topic) => {
-        const listEl = document.createElement("li");
-        listEl.textContent = topic;
-        topicsList.appendChild(listEl);
-      })
-      .join("");
+    // Clear the previous list items in topicsList
+    topicsList.innerHTML = "";
+
+    const formMap = formData.topics.forEach((topic) => {
+      const listEl = document.createElement("li");
+      listEl.textContent = topic;
+      topicsList.appendChild(listEl);
+    });
   }
 });
 
