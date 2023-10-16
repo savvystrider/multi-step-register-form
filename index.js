@@ -4,25 +4,24 @@ const emailInput = document.getElementById("email");
 const checkboxes = Array.from(
   document.querySelectorAll("input[type=checkbox]")
 );
-
 const topicsList = document.getElementById("topics-list");
 
 const stepOne = document.querySelector(".step-one");
 const stepTwo = document.querySelector(".step-two");
 const stepThree = document.querySelector(".step-three");
+const stepFinal = document.querySelector(".step-final");
+const steps = [stepOne, stepTwo, stepThree, stepFinal];
 
-const steps = [stepOne, stepTwo, stepThree];
-let stepIndex = 0;
 const stepNumber = document.getElementById("step-number");
+let stepIndex = 0;
 
 let formData = {};
-
-stepNumber.textContent = stepIndex + 1;
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  verifyInputs();
+  verifyInput(nameInput);
+  verifyInput(emailInput);
 
   if (nameInput.value !== "" && emailInput.value !== "") {
     formData = {
@@ -30,10 +29,10 @@ submitBtn.addEventListener("click", function (e) {
       email: emailInput.value,
       topics: [],
     };
-    stepNumber.textContent = stepIndex + 1;
+
     steps[stepIndex].classList.add("inactive");
     steps[stepIndex + 1].classList.add("active");
-    stepNumber.textContent = stepIndex + 2;
+
     const filterChecked = checkboxes.filter((checkbox) => checkbox.checked);
 
     if (filterChecked.length > 0) {
@@ -49,7 +48,7 @@ submitBtn.addEventListener("click", function (e) {
     // Clear the previous list items in topicsList
     topicsList.innerHTML = "";
 
-    const formMap = formData.topics.forEach((topic) => {
+    formData.topics.forEach((topic) => {
       const listEl = document.createElement("li");
       listEl.textContent = topic;
       topicsList.appendChild(listEl);
@@ -57,16 +56,10 @@ submitBtn.addEventListener("click", function (e) {
   }
 });
 
-function verifyInputs() {
-  if (nameInput.value === "") {
-    nameInput.style.outline = "1px solid red";
+function verifyInput(input) {
+  if (input.value === "") {
+    input.style.outline = "1px solid red";
   } else {
-    nameInput.style.outline = "none";
-  }
-
-  if (emailInput.value === "") {
-    emailInput.style.outline = "1px solid red";
-  } else {
-    emailInput.style.outline = "none";
+    input.style.outline = "none";
   }
 }
