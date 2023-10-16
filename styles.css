@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -10,27 +12,30 @@ body {
     height: 100vh;
     place-items: center;
     background-image: linear-gradient(45deg,
-        hsl(251deg 49% 23%) 0%,
-        hsl(249deg 47% 22%) 10%,
-        hsl(247deg 45% 21%) 20%,
-        hsl(245deg 43% 19%) 30%,
-        hsl(243deg 40% 18%) 40%,
-        hsl(242deg 37% 16%) 50%,
-        hsl(236deg 38% 15%) 60%,
-        hsl(231deg 40% 14%) 70%,
-        hsl(227deg 40% 13%) 80%,
-        hsl(224deg 39% 12%) 90%,
-        hsl(222deg 36% 11%) 100%);
+            hsl(251deg 49% 23%) 0%,
+            hsl(249deg 47% 22%) 10%,
+            hsl(247deg 45% 21%) 20%,
+            hsl(245deg 43% 19%) 30%,
+            hsl(243deg 40% 18%) 40%,
+            hsl(242deg 37% 16%) 50%,
+            hsl(236deg 38% 15%) 60%,
+            hsl(231deg 40% 14%) 70%,
+            hsl(227deg 40% 13%) 80%,
+            hsl(224deg 39% 12%) 90%,
+            hsl(222deg 36% 11%) 100%);
     color: #E5E7EB;
     line-height: 1.5;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-size: 1.25rem;
     color: #E4E8EA;
 }
 
-#name, #email, label {
+#name,
+#email,
+label {
     font-family: inherit;
     display: block;
     margin-bottom: 1em;
@@ -69,7 +74,7 @@ label[for=graphic-design] {
     margin-bottom: 2em;
 }
 
-input[type=checkbox]:checked + label {
+input[type=checkbox]:checked+label {
     background-color: #652CD1;
     color: #E4E8EA;
 }
@@ -79,16 +84,16 @@ input[type=checkbox]:checked + label {
     cursor: pointer;
     color: #E4E7EA;
     background-image: linear-gradient(180deg,
-        hsl(261deg 65% 50%) 0%,
-        hsl(260deg 67% 51%) 11%,
-        hsl(260deg 69% 53%) 22%,
-        hsl(259deg 71% 55%) 33%,
-        hsl(258deg 72% 56%) 44%,
-        hsl(258deg 74% 58%) 56%,
-        hsl(258deg 75% 60%) 67%,
-        hsl(257deg 77% 62%) 78%,
-        hsl(256deg 80% 64%) 89%,
-        hsl(256deg 81% 65%) 100%);
+            hsl(261deg 65% 50%) 0%,
+            hsl(260deg 67% 51%) 11%,
+            hsl(260deg 69% 53%) 22%,
+            hsl(259deg 71% 55%) 33%,
+            hsl(258deg 72% 56%) 44%,
+            hsl(258deg 74% 58%) 56%,
+            hsl(258deg 75% 60%) 67%,
+            hsl(257deg 77% 62%) 78%,
+            hsl(256deg 80% 64%) 89%,
+            hsl(256deg 81% 65%) 100%);
     padding: 0.75em 2em;
     border-radius: 1em;
     border: none;
@@ -112,7 +117,9 @@ form {
     box-shadow: 1px 1px 6px 1px rgba(255, 255, 255, 0.15);
 }
 
-.step-two, .step-three, .step-final {
+.step-two,
+.step-three,
+.step-final {
     display: none;
 }
 
@@ -149,6 +156,7 @@ form {
     height: 1em;
     background-color: #394050;
     border-radius: 50%;
+    transition: all .15s ease-in;
 }
 
 .dot.active {
